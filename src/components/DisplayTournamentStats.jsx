@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import TournamentTable from "../components/TournamentTable";
 
-const TournamentPage = () => {
-  const { id } = useParams(); // EXTRACT TOURNAMENT ID FROM URL PARAMETERS
+const DisplayTournamentStats = (props) => {
   const [isEditing, setIsEditing] = useState(false); // STATE TO TOGGLE EDIT MODE
   const [tournamentData, setTournamentData] = useState(null); // STATE TO HOLD TOURNAMENT DATA
   const [playerStats, setPlayerStats] = useState([]); // STATE TO HOLD PLAYER STATS
@@ -14,7 +12,7 @@ const TournamentPage = () => {
       // TEST TOURNAMENT ID 66b1f03a70efe80851429717
       try {
         const response = await fetch(
-          `https://brawl-gg-backend.onrender.com/tournament/${id}`
+          `https://brawl-gg-backend.onrender.com/tournament/${props.id}`
         ); // FETCH REQUEST TO BACKEND
         if (!response.ok) {
           throw new Error("Failed to fetch tournament data"); // ERROR HANDLING FOR FAILED REQUEST
@@ -30,6 +28,8 @@ const TournamentPage = () => {
 
     fetchTournamentData();
   }, [id]);
+
+  console.log(id)
 
   // SIMPLE LOADING DIV IF WE DONT HAVE ANY TOURNAMENT DATA
   if (!tournamentData) {
@@ -88,4 +88,4 @@ const TournamentPage = () => {
   );
 };
 
-export default TournamentPage;
+export default DisplayTournamentStats;
