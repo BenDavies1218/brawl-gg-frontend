@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/Navbar';
 import UserRow from '../components/UserRow';
-// import TournamentTable from '../components/TournamentTable';
+import TournamentTable from '../components/TournamentTable';
 
 export default function Dashboard() {
     const [userData, setUserData] = useState(null); // Initialize to null
@@ -64,7 +64,7 @@ export default function Dashboard() {
                             {userData ? (
                                 <>
                                     <UserRow user={userData.userData} />
-                                    {/* <TournamentTable user={userData.userData}/> */}
+                                    <TournamentTable user={userData.userData}/>
                                 </>
                             ) : (
                                 <div>No user data available.</div>

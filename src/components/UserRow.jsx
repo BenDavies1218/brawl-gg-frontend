@@ -58,11 +58,11 @@ export default function UserRow({ user }) {
             <h1 className="text-white text-4xl py-5">
                 Welcome, <strong>{userInfo.username}</strong>
             </h1>
-            <div className="border-white text-highlight border-2 w-full h-[300px] rounded-lg flex flex-row">
-                <table>
-                    <tbody>
+            <div className="border-white bg-black text-white border-2 w-full h-[300px] rounded-lg flex flex-col justify-center">
+                <table className='w-full'>
+                    <tbody className='text-xl'>
                         <tr>
-                            <td>Email:</td>
+                            <td className='py-10 px-20'><strong>Email:</strong></td>
                             <td>
                                 {!isEditing ? (
                                     userInfo.email
@@ -77,7 +77,7 @@ export default function UserRow({ user }) {
                             </td>
                         </tr>
                         <tr>
-                            <td>Password:</td>
+                            <td className='py-10 px-20'><strong>Password:</strong></td>
                             <td>
                                 {!isEditing ? (
                                     '********'
@@ -91,30 +91,21 @@ export default function UserRow({ user }) {
                                 )}
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                {loading ? (
-                                    <p>Loading...</p>
-                                ) : (
-                                    <>
-                                        {isEditing ? (
-                                            <button onClick={saveEditHandler}>Save</button>
-                                        ) : (
-                                            <button onClick={saveEditHandler}>Edit Profile</button>
-                                        )}
-                                    </>
-                                )}
-                            </td>
-                        </tr>
-                        {error && (
-                            <tr>
-                                <td colSpan="2">
-                                    <p style={{ color: 'red' }}>{error}</p>
-                                </td>
-                            </tr>
-                        )}
                     </tbody>
                 </table>
+                <div className='flex justify-end'>
+                    {loading ? (
+                        <p className='mr-10' >Loading...</p>
+                    ) : (
+                        <>
+                            {isEditing ? (
+                                <button className='mr-10 max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400' onClick={saveEditHandler}>Save</button>
+                            ) : (
+                                <button className='mr-10 max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400' onClick={saveEditHandler}>Edit Profile</button>
+                            )}
+                        </>
+                    )}
+                </div>
             </div>
         </>
     );
