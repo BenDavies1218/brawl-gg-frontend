@@ -10,6 +10,7 @@ import PageNotFound from './pages/PageNotFound';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPassword';
 import TournamentPage from "./pages/TournamentPage";
+import TournamentCreationPage from './pages/TournamentCreationPage';
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPasswordPage />} />
           <Route path='/reset-password' element={<ResetPasswordPage />} />
           <Route path="/tournament/:id" element={<TournamentPage />} />
+          <Route path ="/tournament-creation" element={<TournamentCreationPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
