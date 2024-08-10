@@ -55,15 +55,15 @@ export default function UserRow({ user }) {
 
     return (
         <>
-            <h1 className="text-white text-4xl py-5">
+            <h1 className="text-white text-4xl py-10 flex items-start">
                 Welcome, <strong>{userInfo.username}</strong>
             </h1>
-            <div className="border-white bg-black text-white border-2 w-full h-[300px] rounded-lg flex flex-col justify-center">
-                <table className='w-full'>
-                    <tbody className='text-xl'>
+            <div className="border-2 border-white bg-black text-white w-full h-[300px] rounded-lg flex flex-col p-4 mb-5">
+                <table className="w-full border-collapse">
+                    <tbody className="text-xl">
                         <tr>
-                            <td className='py-10 px-20'><strong>Email:</strong></td>
-                            <td>
+                            <td className="py-4 px-6 border-b border-white"><strong>Email:</strong></td>
+                            <td className="py-4 px-6 border-b border-white">
                                 {!isEditing ? (
                                     userInfo.email
                                 ) : (
@@ -72,36 +72,48 @@ export default function UserRow({ user }) {
                                         name="email"
                                         value={userInfo.email}
                                         onChange={handleChange}
+                                        className="bg-white text-black border border-white rounded-md px-3 py-1"
                                     />
                                 )}
                             </td>
                         </tr>
                         <tr>
-                            <td className='py-10 px-20'><strong>Password:</strong></td>
-                            <td>
+                            <td className="py-4 px-6 border-b border-white"><strong>Password:</strong></td>
+                            <td className="py-4 px-6 border-b border-white">
                                 {!isEditing ? (
                                     '********'
                                 ) : (
                                     <input
                                         type="password"
                                         name="password"
-                                        value="**********"
+                                        value={userInfo.password}
                                         onChange={handleChange}
+                                        className="bg-white text-black border border-white rounded-md px-3 py-1"
                                     />
                                 )}
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div className='flex justify-end'>
+                <div className="flex justify-end mt-auto">
                     {loading ? (
-                        <p className='mr-10' >Loading...</p>
+                        <p className="text-white">Loading...</p>
                     ) : (
                         <>
                             {isEditing ? (
-                                <button className='mr-10 max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400' onClick={saveEditHandler}>Save</button>
+                                <button
+                                    className="max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
+                                    onClick={saveEditHandler}
+                                >
+                                    Save
+                                </button>
                             ) : (
-                                <button className='mr-10 max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400' onClick={saveEditHandler}>Edit Profile</button>
+                                <button
+                                    className="max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
+                                    onClick={saveEditHandler}
+                                >
+                                    Edit Profile
+                                </button>
                             )}
                         </>
                     )}

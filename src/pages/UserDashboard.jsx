@@ -59,8 +59,7 @@ export default function Dashboard() {
                 <div className='relative z-20'>
                     <NavBar />
                     <div className='overflow-hidden'>
-                        <div className="flex flex-col container mx-auto h-screen justify-center">
-                            
+                        <div className="flex flex-col container mx-auto h-full">
                             {userData ? (
                                 <>
                                     <UserRow user={userData.userData} />
