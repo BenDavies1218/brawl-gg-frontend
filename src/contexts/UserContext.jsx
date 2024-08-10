@@ -1,4 +1,6 @@
-import { useState, createContext, useContext } from "react";
+/* eslint-disable no-useless-catch */
+import { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const UserDataContext = createContext({
   userJwt: "",
@@ -10,6 +12,7 @@ const UserDispatchContext = createContext({
   makeLoginRequest: () => {},
   makeForgotPasswordRequest: () => {},
   makeResetPasswordRequest: () => {},
+  logout: () => {}
 });
 
 export function useUserData() {
@@ -149,11 +152,25 @@ export default function UserProvider({ children }) {
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem('authToken');
+    setUserJwt(null);
+    location.reload();
+  };
+
   return (
     <UserDataContext.Provider value={{ userJwt, decodedUserJwt }}>
-      <UserDispatchContext.Provider value={{ makeSignupRequest, makeLoginRequest, makeForgotPasswordRequest, makeResetPasswordRequest }}>
+      <UserDispatchContext.Provider value={{ makeSignupRequest, makeLoginRequest, makeForgotPasswordRequest, makeResetPasswordRequest, logout }}>
         {children}
       </UserDispatchContext.Provider>
     </UserDataContext.Provider>
   );
+}
+
+export function useAuth() {
+  const context = useContext(UserDispatchContext);
+  if (!context) {
+      throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
 }

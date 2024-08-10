@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo-transparent.svg";
 import { useScroll, useMotionValueEvent } from "framer-motion";
-import { useAuth } from "../data/AuthProvider";
+import { useAuth } from "../contexts/UserContext";
 
 export default function NavBar() {
     const { scrollY } = useScroll();

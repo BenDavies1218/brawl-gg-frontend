@@ -18,7 +18,7 @@ const LoginForm = () => {
       setSuccess('Login successful! You will be redirected shortly.');
       console.log('Login successful');
       setTimeout(() => { 
-        navigate('/'); 
+        navigate('/dashboard'); 
       }, 2000); 
     } catch (error) {
       if (error.message == 'Account not found') {

@@ -1,5 +1,5 @@
 import NavBar from '../components/Navbar'
-import TempLoginForm from '../components/TempLoginForm'
+import LoginForm from '../components/LoginForm'
 
 export default function LoginPage() {
 
@@ -13,7 +13,7 @@ export default function LoginPage() {
                 </h2>
                 <div className='h-dvh flex flex-col items-center'>
                     <div className='formcontainer h-2/5 w-1/2 my-10 flex-col content-center flex items-center bg-amber-400 text-center rounded border-white border-2'>
-                        <TempLoginForm/>
+                        <LoginForm />
                     </div>
                 </div>
             </div>
