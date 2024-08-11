@@ -58,9 +58,9 @@ const TournamentForm = () => {
         isAuthorPlayer,
       };
       await dispatch({ type: 'CREATE_TOURNAMENT', payload: tournamentData });
-      setSuccess('Tournament created successfully, redirecting to tournament list...');
+      setSuccess('Tournament created successfully, redirecting to dashboard...');
       setTimeout(() => {
-        navigate('/tournaments/all');
+        navigate('/dashboard');
       }, 2000);
     } catch (error) {
       setError('Error occurred while creating tournament');
