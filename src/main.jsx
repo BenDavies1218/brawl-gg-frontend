@@ -11,8 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <UserProvider>
         <TournamentProvider>
-        <App />
-
+          <App />
         </TournamentProvider>
       </UserProvider>
     </BrowserRouter>

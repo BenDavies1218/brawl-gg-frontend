@@ -11,22 +11,24 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPassword';
 import TournamentPage from "./pages/TournamentPage";
 import TournamentCreationPage from './pages/TournamentCreationPage';
+import { useUserData } from './contexts/UserContext';
 
 function App() {
+  const { userJwt } = useUserData();
   
   return (
     <>
       <Routes>
         <Route index element={<LandingPage />} />
-        <Route path="/" element={<Template />}>
+        <Route path="/" element={<Template userJwt={userJwt}/>}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/tos" element={<TosPage />} />
           <Route path='/forgot-password' element={<ForgotPasswordPage />} />
           <Route path='/reset-password' element={<ResetPasswordPage />} />
-          <Route path="/tournament/:id" element={<TournamentPage />} />
-          <Route path ="/tournament-creation" element={<TournamentCreationPage />} />
+          <Route path="/tournament/:id" element={<TournamentPage userJwt={userJwt}/>} />
+          <Route path="/tournament-creation" element={<TournamentCreationPage userJwt={userJwt}/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

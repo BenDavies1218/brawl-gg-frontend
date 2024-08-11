@@ -63,8 +63,11 @@ export default function UserProvider({ children }) {
       }
 
       const loginResult = await response.json();
+      console.log('Login result:', loginResult);
       setUserJwt(loginResult.jwt);
+      console.log('User JWT:', loginResult.jwt);
       setDecodedUserJwt(loginResult.decodedJwt);
+      console.log('Decoded user JWT:', loginResult.decodedJwt);
     } catch (error) {
       throw error;
     }

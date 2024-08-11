@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import { useUserData } from './UserContext';
 
 const TournamentStateContext = createContext();
 const TournamentDispatchContext = createContext({
@@ -11,6 +12,7 @@ export function useTournamentDispatch() {
 
 
 const TournamentProvider = ({ children }) => {
+  const { userJwt } = useUserData(); // Get userJwt from UserContext
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
@@ -31,11 +33,14 @@ const TournamentProvider = ({ children }) => {
   };
 
   const makeCreateTournamentRequest = async (tournamentData) => {
+    // console.log('userJwt:', userJwt);
+
     try {
       const response = await fetch('https://brawl-gg-backend.onrender.com/tournament', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          jwt: userJwt
         },
         body: JSON.stringify(tournamentData),
       });
