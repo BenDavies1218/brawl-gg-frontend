@@ -33,8 +33,6 @@ const TournamentProvider = ({ children }) => {
   };
 
   const makeCreateTournamentRequest = async (tournamentData) => {
-    // console.log('userJwt:', userJwt);
-
     try {
       const response = await fetch('https://brawl-gg-backend.onrender.com/tournament', {
         method: 'POST',
@@ -44,11 +42,10 @@ const TournamentProvider = ({ children }) => {
         },
         body: JSON.stringify(tournamentData),
       });
-
+  
       if (response.ok) {
         setSuccess('Tournament created successfully!');
         console.log('Tournament created successfully:', await response.json());
-        // Redirect to tournament list or other page
       } else {
         setError('Error occurred while creating tournament');
         console.error('Error creating tournament:', await response.text());

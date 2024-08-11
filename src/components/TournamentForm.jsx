@@ -57,8 +57,7 @@ const TournamentForm = () => {
         password,
         isAuthorPlayer,
       };
-      await createTournament(tournamentData);
-      setError(null);
+      await dispatch({ type: 'CREATE_TOURNAMENT', payload: tournamentData });
       setSuccess('Tournament created successfully, redirecting to tournament list...');
       setTimeout(() => {
         navigate('/tournaments/all');
@@ -75,19 +74,19 @@ const TournamentForm = () => {
       <label className="mx-auto text-black text-left text-lg font-bold">
         Tournament Name:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="text" value={tournamentName} onChange={(event) => setTournamentName(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={tournamentName} onChange={(event) => setTournamentName(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
         Author:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="text" value={author} onChange={(event) => setAuthor(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={author} onChange={(event) => setAuthor(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
         Teams:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value)} placeholder="Enter team name" />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value)} placeholder="Enter team name" />
         <button type="button" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAddTeam(teamName)}>
           Add Team
         </button>
@@ -106,13 +105,13 @@ const TournamentForm = () => {
       <label className="mx-auto text-black text-left text-lg font-bold">
         Game:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="text" value={game} onChange={(event) => setGame(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={game} onChange={(event) => setGame(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
         Game Stats:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="text" value={newGameStat} onChange={(event) => setNewGameStat(event.target.value)} placeholder="Add game stat" />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={newGameStat} onChange={(event) => setNewGameStat(event.target.value)} placeholder="Add game stat" />
         <button type="button" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAddGameStat(newGameStat)} >
           Add Game Stat
         </button>
@@ -131,13 +130,13 @@ const TournamentForm = () => {
       <label className="mx-auto text-black text-left text-lg font-bold">
         Game Type:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="text" value={gameType} onChange={(event) => setGameType(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={gameType} onChange={(event) => setGameType(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
         Description:
         <br />
-        <textarea className="text-black rounded border-black border-2 w-full" value={description} onChange={(event) => setDescription(event.target.value)} />
+        <textarea className="text-black rounded border-black border-2 w-full" cols="100" value={description} onChange={(event) => setDescription(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
@@ -155,13 +154,13 @@ const TournamentForm = () => {
       <label className="mx-auto text-black text-left text-lg font-bold">
         Password:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" size="100" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
         Is Author Player:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="checkbox" checked={isAuthorPlayer} onChange={(event) => setIsAuthorPlayer(event.target.checked)} />
+        <input className="text-black rounded border-black border-2 h-6 w-full" type="checkbox" checked={isAuthorPlayer} onChange={(event) => setIsAuthorPlayer(event.target.checked)} />
       </label>
 
       {error && <p className="text-red-500 font-bold">{error}</p>}
