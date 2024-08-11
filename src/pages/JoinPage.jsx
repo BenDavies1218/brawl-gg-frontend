@@ -15,7 +15,7 @@ const JoinPage = () => {
       try {
         const localToken = localStorage.getItem("authToken");
         if (!localToken) {
-          navigate("/login");
+          navigate("/signup");
           return;
         }
 

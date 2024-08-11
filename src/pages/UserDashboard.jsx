@@ -55,8 +55,6 @@ export default function Dashboard() {
         </>
     }
 
-    console.log(userData);
-
     return (
         <div>
             <div className='bg-black h-screen'>

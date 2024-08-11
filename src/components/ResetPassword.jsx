@@ -64,7 +64,7 @@ const ResetPassword = () => {
       </div>
 
       {error && <p className="text-red-500 font-bold">{error}</p>}
-      {success && <p className="text-black font-bold">Password reset successfully! Redirecting to login page...</p>}
+      {success && <p className="text-highlight font-bold">Password reset successfully! Redirecting to login page...</p>}
 
       <button className='mx-auto w-fit px-5 py-2 rounded-md text-white font-bold relative bg-black' type="submit">
         Reset Password

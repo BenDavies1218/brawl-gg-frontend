@@ -89,7 +89,7 @@ const SignupForm = () => {
       </label>
 
       {error && <p className="text-red-500 font-bold mb-4 text-center">{error}</p>}
-      {success && <p className="text-black font-bold mb-4 text-center">{success}</p>}
+      {success && <p className="text-highlight font-bold mb-4 text-center">{success}</p>}
 
       <button
         className="mx-auto w-full px-5 py-2 rounded-md bg-[#fbae3c] text-white font-bold hover:bg-[#f8a32a] active:bg-[#e89c1b] transition-colors duration-300"
