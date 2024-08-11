@@ -142,13 +142,13 @@ const TournamentForm = () => {
       <label className="mx-auto text-black text-left text-lg font-bold">
         Minimum Players:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="number" value={minimumPlayers} onChange={(event) => setMinimumPlayers(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" min="0" type="number" value={minimumPlayers} onChange={(event) => setMinimumPlayers(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
         Maximum Players:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" type="number" value={maximumPlayers} onChange={(event) => setMaximumPlayers(event.target.value)} />
+        <input className="text-black rounded border-black border-2 w-full" min="0" type="number" value={maximumPlayers} onChange={(event) => setMaximumPlayers(event.target.value)} />
       </label>
 
       <label className="mx-auto text-black text-left text-lg font-bold">
