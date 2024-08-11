@@ -30,19 +30,17 @@ const ForgotPassword = () => {
   };
 
   return (
-    <form className='flex flex-col justify-evenly bg-amber-400 content-center h-full w-1/2 text-center' onSubmit={handleSubmit}>
-      <h4 className='text-black font-bold text-xl'>Forgot Password</h4>
-
-      <label className='mx-auto text-black text-left text-lg font-bold'>
+    <form className='flex flex-col justify-center bg-black text-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto z-10 border-temp-black border-2' onSubmit={handleSubmit}>
+      <label className='text-left text-lg font-bold mb-4'>
         Email:
-        <input className='text-black rounded border-black border-2 w-full' size="100" type="email" value={email} onChange={(event) => setEmail(event.target.value)}/>
+        <input className='mt-2 w-full px-4 py-2 bg-black border border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none' size="100" type="email" value={email} onChange={(event) => setEmail(event.target.value)}/>
       </label>
 
       {error && <p className="text-red-500 font-bold">{error}</p>}
-      {success && <p className="text-black font-bold">{success}</p>}
+      {success && <p className="text-highlight font-bold">{success}</p>}
 
-      <button className='mx-auto w-fit px-5 py-2 rounded-md text-white font-bold relative bg-black' type="submit">
-        Send Password Reset Email
+      <button className='mx-auto w-full px-5 py-2 rounded-md bg-[#fbae3c] text-white font-bold hover:bg-[#f8a32a] active:bg-[#e89c1b] transition-colors duration-300' type="submit">
+        Send Email
       </button>
     </form>
   );
