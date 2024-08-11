@@ -6,20 +6,15 @@ export default function SignupPage(){
     return (
         <>
         <div className='bg-black'>
-
             <NavBar />
-            <div className='bg-black'>
-                <h2 className="text-center text-white text-3xl font-extrabold m-6 leading-[1.15] sm:text-5xl">
-                    Sign up
-                </h2>
-                <div className='h-dvh flex flex-col items-center'>
-                    <div class='formcontainer' className='h-2/5 w-1/2 my-10 flex-col content-center flex items-center bg-amber-400 text-center rounded border-white border-2'>
-                        <SignupForm/>
-                    </div>
+            <div className='flex justify-center items-center h-[850px]'>
+                <SignupForm />
+                <div className='w-screen min-h-screen fixed flex justify-center px-6 py-40 pointer-events-none overflow-auto'>
+                    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+                    <div className='bg-gradient-to-c from-transparent via-transparent to-black to-70% absolute inset-0'></div>
                 </div>
             </div>
         </div>
-
         </>
     )
 }

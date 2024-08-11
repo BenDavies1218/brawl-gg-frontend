@@ -114,7 +114,7 @@ const TournamentPage = () => {
   };
 
   return (
-    <div className="bg-black text-white rounded-lg max-w-full w-full mx-auto my-8 p-6 space-y-6 border-2 border-white shadow-lg">
+    <div className="bg-black text-white rounded-lg max-w-full w-full mx-auto my-6 p-6 space-y-6 border-2 border-temp-black shadow-lg">
       <h1 className="text-4xl font-extrabold text-center">{tournamentData.tournamentName}</h1>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <button
@@ -135,9 +135,9 @@ const TournamentPage = () => {
           Invite Players
         </button>
       </div>
-      <div className="space-y-4 h-[600px] overflow-y-scroll no-scrollbar">
+      <div className="space-y-4 h-[600px] overflow-y-scroll no-scrollbar border-2 border-temp-black rounded-lg">
         {Object.keys(groupedByTeams).map((team, teamIndex) => (
-          <div className="bg-black/75 p-4 rounded-lg border border-black/50 shadow-md text-white" key={teamIndex}>
+          <div className="bg-black/75 p-4 rounded-lg shadow-md text-white " key={teamIndex}>
             <ViewTournament
               team={team}
               players={groupedByTeams[team]}

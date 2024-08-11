@@ -15,7 +15,7 @@ export default function Footer() {
                     <div>
                         <NavLink 
                             to="/privacy"
-                            className=" max-w-fit px-2 py-2 text-white text-xs"
+                            className="mx-auto max-w-fit px-2 py-2 text-white text-xs"
                             >
                                 Privacy Policy
                         </NavLink>
