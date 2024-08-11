@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/Navbar';
 import UserRow from '../components/UserRow';
 import TournamentTable from '../components/TournamentTable';
@@ -68,12 +68,6 @@ export default function Dashboard() {
                     <NavBar />
                     <div className='overflow-hidden'>
                         <div className="flex flex-col container mx-auto h-full">
-                            <NavLink
-                                to="/tournament-creation"
-                                className="mr-5 mx-auto max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
-                                >
-                                    Create New Tournament
-                            </NavLink>
                             {userData ? (
                                 <>
                                     <UserRow user={userData.userData} />

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import ViewTournament from "../components/ViewTournament";
 import "../styles/TournamentTable.css";
-import copyIcon from "../assets/icons/copy.svg";
+import BackArrow from "../assets/icons/back-arrow.svg";
 
 const TournamentPage = () => {
   const { id } = useParams(); // GET THE TOURNAMENT ID FROM URL PARAMETERS
@@ -115,7 +115,20 @@ const TournamentPage = () => {
 
   return (
     <div className="bg-black text-white rounded-lg max-w-full w-full mx-auto my-6 p-6 space-y-6 border-2 border-temp-black shadow-lg">
-      <h1 className="text-4xl font-extrabold text-center">{tournamentData.tournamentName}</h1>
+      <div className="">
+        <NavLink
+            to="/dashboard"
+            className="flex flex-row items-center ml-0 mx-auto max-w-fit px-4 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
+            >
+              <img
+                src={BackArrow}
+                alt="back arrow icon"
+                className="w-5 h-5 mr-1"
+              />
+                Back
+        </NavLink>
+        <h1 className="text-4xl font-extrabold text-center">{tournamentData.tournamentName}</h1>
+      </div>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <button
           className="px-4 py-2 rounded-lg bg-[#fbae3c] text-white font-medium shadow-lg hover:bg-[#f8a32a] focus:outline-none focus:ring-2 focus:ring-[#fbae3c] transition-colors duration-300"
@@ -123,7 +136,7 @@ const TournamentPage = () => {
         >
           {isEditing ? "Save" : "Edit"}
         </button>
-        <button
+        {/* <button
           className="px-4 py-2 rounded-lg bg-[#fbae3c] text-white font-medium shadow-lg flex items-center gap-2 hover:bg-[#f8a32a] focus:outline-none focus:ring-2 focus:ring-[#fbae3c] transition-colors duration-300"
           onClick={handleJoinLinkClick}
         >
@@ -133,7 +146,7 @@ const TournamentPage = () => {
             className="w-5 h-5"
           />
           Invite Players
-        </button>
+        </button> */}
       </div>
       <div className="space-y-4 h-[600px] overflow-y-scroll no-scrollbar border-2 border-temp-black rounded-lg">
         {Object.keys(groupedByTeams).map((team, teamIndex) => (

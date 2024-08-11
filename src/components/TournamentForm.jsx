@@ -68,28 +68,28 @@ const TournamentForm = () => {
   };
 
   return (
-    <form className="flex flex-col justify-evenly bg-amber-400 content-center h-full w-1/2 text-center" onSubmit={handleSubmit}>
-      <h4 className="text-black font-bold text-xl">Create Tournament</h4>
+    <form className="flex flex-col justify-center bg-black text-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto z-10 border-temp-black border-2" onSubmit={handleSubmit}>
+        <h4 className="text-[#fbae3c] font-extrabold text-2xl mb-6 text-center">Create Tournament</h4>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
-        Tournament Name:
-        <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={tournamentName} onChange={(event) => setTournamentName(event.target.value)} />
-      </label>
+        <label className="text-left text-lg font-bold mb-4">
+          Tournament Name:
+          <br />
+          <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="text" value={tournamentName} onChange={(event) => setTournamentName(event.target.value)} />
+        </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
-        Author:
-        <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={author} onChange={(event) => setAuthor(event.target.value)} />
-      </label>
+        <label className="text-left text-lg font-bold mb-4">
+          Author:
+          <br />
+          <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="text" value={author} onChange={(event) => setAuthor(event.target.value)} />
+        </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
-        Teams:
-        <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value)} placeholder="Enter team name" />
-        <button type="button" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAddTeam(teamName)}>
-          Add Team
-        </button>
+        <label className="text-left text-lg font-bold mb-4">
+          Teams:
+          <br />
+          <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="text" value={teamName} onChange={(event) => setTeamName(event.target.value)} placeholder="Enter team name" />
+          <button type="button" className="mx-auto mt-5 w-full px-5 py-2 rounded-md bg-[#fbae3c] text-white font-bold hover:bg-[#f8a32a] active:bg-[#e89c1b] transition-colors duration-300" onClick={() => handleAddTeam(teamName)}>
+            Add Team
+          </button>
         <ul>
           {teams.map((team, index) => (
             <li key={index}>
@@ -102,17 +102,17 @@ const TournamentForm = () => {
         </ul>
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Game:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={game} onChange={(event) => setGame(event.target.value)} />
+        <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="text" value={game} onChange={(event) => setGame(event.target.value)} />
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Game Stats:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={newGameStat} onChange={(event) => setNewGameStat(event.target.value)} placeholder="Add game stat" />
-        <button type="button" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAddGameStat(newGameStat)} >
+        <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="text" value={newGameStat} onChange={(event) => setNewGameStat(event.target.value)} placeholder="Add game stat" />
+        <button type="button" className="mx-auto mt-5 w-full px-5 py-2 rounded-md bg-[#fbae3c] text-white font-bold hover:bg-[#f8a32a] active:bg-[#e89c1b] transition-colors duration-300" onClick={() => handleAddGameStat(newGameStat)} >
           Add Game Stat
         </button>
         <ul>
@@ -127,46 +127,46 @@ const TournamentForm = () => {
         </ul>
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Game Type:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="text" value={gameType} onChange={(event) => setGameType(event.target.value)} />
+        <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="text" value={gameType} onChange={(event) => setGameType(event.target.value)} />
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Description:
         <br />
-        <textarea className="text-black rounded border-black border-2 w-full" cols="100" value={description} onChange={(event) => setDescription(event.target.value)} />
+        <textarea className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" cols="100" value={description} onChange={(event) => setDescription(event.target.value)} />
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Minimum Players:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" min="0" type="number" value={minimumPlayers} onChange={(event) => setMinimumPlayers(event.target.value)} />
+        <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" min="0" type="number" value={minimumPlayers} onChange={(event) => setMinimumPlayers(event.target.value)} />
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Maximum Players:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" min="0" type="number" value={maximumPlayers} onChange={(event) => setMaximumPlayers(event.target.value)} />
+        <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" min="0" type="number" value={maximumPlayers} onChange={(event) => setMaximumPlayers(event.target.value)} />
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Password:
         <br />
-        <input className="text-black rounded border-black border-2 w-full" size="100" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+        <input className="mt-2 w-full px-4 py-2 bg-black border-2 border-temp-black rounded-md text-white placeholder-white/50 focus:border-[#fbae3c] focus:outline-none" size="100" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
       </label>
 
-      <label className="mx-auto text-black text-left text-lg font-bold">
+      <label className="text-left text-lg font-bold mb-4">
         Is Author Player:
         <br />
-        <input className="text-black rounded border-black border-2 h-6 w-full" type="checkbox" checked={isAuthorPlayer} onChange={(event) => setIsAuthorPlayer(event.target.checked)} />
+        <input className="text-white rounded border-black border-2 h-6 w-full" type="checkbox" checked={isAuthorPlayer} onChange={(event) => setIsAuthorPlayer(event.target.checked)} />
       </label>
 
       {error && <p className="text-red-500 font-bold">{error}</p>}
       {success && <p className="text-black font-bold">{success}</p>}
 
-      <button className="mx-auto w-fit px-5 py-2 rounded-md text-white font-bold relative bg-black" type="submit">
+      <button className="mx-auto w-full px-5 py-2 rounded-md bg-[#fbae3c] text-white font-bold hover:bg-[#f8a32a] active:bg-[#e89c1b] transition-colors duration-300" type="submit">
         Create Tournament
       </button>
     </form>

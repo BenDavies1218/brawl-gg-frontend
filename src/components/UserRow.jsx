@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export default function UserRow({ user }) {
@@ -55,9 +56,17 @@ export default function UserRow({ user }) {
 
     return (
             <>
-              <h1 className="text-white text-4xl py-10 flex items-start">
-                Welcome,<strong className="text-highlight">{userInfo.username}</strong>
-              </h1>
+              <div className='flex flex-row justify-between items-center'>
+                <h1 className="text-white text-4xl py-10 flex items-start">
+                  Welcome,<strong className="text-highlight">{userInfo.username}</strong>
+                </h1>
+                <NavLink
+                    to="/tournament-creation"
+                    className="mr-5 mx-auto max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
+                    >
+                        Create New Tournament
+                </NavLink>
+              </div>
               <div className="border-2 border-temp-black bg-black text-white w-full h-[300px] rounded-lg flex flex-col p-4 mb-5">
                 <table className="w-auto border-collapse">
                   <tbody className="text-lg">
