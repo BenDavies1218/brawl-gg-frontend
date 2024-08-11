@@ -20,7 +20,8 @@ const TournamentForm = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
-  const { createTournament } = useTournamentDispatch();
+  const { dispatch } = useTournamentDispatch();
+
   const navigate = useNavigate();
 
   const handleAddTeam = () => {
@@ -64,6 +65,7 @@ const TournamentForm = () => {
       }, 2000);
     } catch (error) {
       setError('Error occurred while creating tournament');
+      // console.log(error)
     }
   };
 
