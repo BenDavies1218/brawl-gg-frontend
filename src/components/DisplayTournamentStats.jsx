@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ViewTournament from "../components/ViewTournament";
 import "../styles/TournamentTable.css";
-import copyIcon from "../assets/copy-3-svgrepo-com.svg";
+import copyIcon from "../assets/icons/copy.svg";
 
 const TournamentPage = () => {
   const { id } = useParams(); // GET THE TOURNAMENT ID FROM URL PARAMETERS
@@ -114,31 +114,30 @@ const TournamentPage = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg flex-col justify-center text-center gap-8 p-8 min-h-vh">
-      <h1>{tournamentData.tournamentName}</h1>
-      <div>
+    <div className="bg-black text-white rounded-lg max-w-full w-full mx-auto my-8 p-6 space-y-6 border-2 border-white shadow-lg">
+      <h1 className="text-4xl font-extrabold text-center">{tournamentData.tournamentName}</h1>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <button
-          className="max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400 mx-8"
+          className="px-4 py-2 rounded-lg bg-[#fbae3c] text-white font-medium shadow-lg hover:bg-[#f8a32a] focus:outline-none focus:ring-2 focus:ring-[#fbae3c] transition-colors duration-300"
           onClick={handleEditToggle}
         >
           {isEditing ? "Save" : "Edit"}
         </button>
         <button
-          className="m-8 mx-auto max-w-fit pl-2 pr-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
+          className="px-4 py-2 rounded-lg bg-[#fbae3c] text-white font-medium shadow-lg flex items-center gap-2 hover:bg-[#f8a32a] focus:outline-none focus:ring-2 focus:ring-[#fbae3c] transition-colors duration-300"
           onClick={handleJoinLinkClick}
         >
           <img
             src={copyIcon}
             alt="copy to clipboard"
-            className="inline-block w-6 h-6 mr-2"
+            className="w-5 h-5"
           />
           Invite Players
         </button>
       </div>
-
-      <div className="tourn-container">
+      <div className="space-y-4 h-[600px] overflow-y-scroll no-scrollbar">
         {Object.keys(groupedByTeams).map((team, teamIndex) => (
-          <div className="team-container" key={teamIndex}>
+          <div className="bg-black/75 p-4 rounded-lg border border-black/50 shadow-md text-white" key={teamIndex}>
             <ViewTournament
               team={team}
               players={groupedByTeams[team]}

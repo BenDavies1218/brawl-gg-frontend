@@ -56,7 +56,7 @@ const TournamentTable = (props) => {
   console.log(tournaments);
 
   return (
-    <div className="border-2 border-white bg-black text-white rounded-lg shadow-md mt-5 mx-auto p-4 max-w-full w-full h-[400px] overflow-y-scroll flex justify-center items-center">
+    <div className="border-2 border-white bg-black text-white rounded-lg shadow-md mt-5 mx-auto p-4 max-w-full w-full h-[400px] overflow-y-scroll no-scrollbar flex justify-center items-center">
       {tournaments.length > 0 ? (
         <table className="w-full bg-white border-2 border-white rounded-lg ">
           <thead>

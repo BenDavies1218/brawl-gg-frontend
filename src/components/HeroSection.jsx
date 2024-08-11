@@ -21,7 +21,7 @@ export default function HeroSection() {
                 <img 
                     src={Demo}
                     alt="Demo"
-                    className='mx-auto max-h-[300px] sm:max-h-[900px] rounded-lg blur-[2px] pointer-events-none'
+                    className='mx-auto max-h-[300px] sm:max-h-[700px] rounded-lg blur-[3px] pointer-events-none'
                 />
             </div>
         </section>
