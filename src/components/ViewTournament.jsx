@@ -8,16 +8,16 @@ const ViewTournament = ({
   onStatChange,
 }) => {
   return (
-    <table className="w-full bg-gray-900 text-gray-100 border border-gray-700 rounded-lg overflow-hidden shadow-md">
-      <thead className="bg-gray-800">
+    <table className="w-full bg-black text-gray-100 border-2 border-temp-black rounded-lg overflow-hidden shadow-lg">
+      <thead className="bg-black border-2 border-temp-black ">
         <tr>
-          <th colSpan={gameStats.length} className="py-3 text-xl font-semibold text-center border-b border-gray-700">
+          <th colSpan={gameStats.length} className="py-4 text-2xl font-bold text-center bg-temp-black">
             {team}
           </th>
         </tr>
-        <tr className="bg-gray-700">
+        <tr className="bg-black border-2 border-temp-black">
           {gameStats.map((stat) => (
-            <th key={stat} className="py-2 px-4 text-left border-b border-gray-600">
+            <th key={stat} className="py-3 px-4 text-center bg-highlight">
               {stat.charAt(0).toUpperCase() + stat.slice(1)}
             </th>
           ))}

@@ -56,12 +56,12 @@ export default function ContactSection() {
                     <img 
                         src={Rpg}
                         alt="RPG Character"
-                        className='absolute pointer-events-none -left-[375px] top-16 brightness-75 h-[1000px] scale-x-[-1]'
+                        className='absolute pointer-events-none -left-[375px] top-16 brightness-75 h-[1000px] scale-x-[-1] overflow-hidden'
                     />
                     <img 
                         src={Fps}
                         alt="Fantasy Creature"
-                        className='absolute pointer-events-none top-0 -right-56 brightness-75 h-full'
+                        className='absolute pointer-events-none top-0 -right-56 brightness-75 h-full overflow-hidden'
                     />
                 </div>
             </div>

@@ -54,71 +54,60 @@ export default function UserRow({ user }) {
     };
 
     return (
-        <>
-            <h1 className="text-white text-4xl py-10 flex items-start">
-                Welcome, <strong>{userInfo.username}</strong>
-            </h1>
-            <div className="border-2 border-white bg-black text-white w-full h-[300px] rounded-lg flex flex-col p-4 mb-5">
-                <table className="w-full border-collapse">
-                    <tbody className="text-xl">
-                        <tr>
-                            <td className="py-4 px-6 border-b border-white"><strong>Email:</strong></td>
-                            <td className="py-4 px-6 border-b border-white">
-                                {!isEditing ? (
-                                    userInfo.email
-                                ) : (
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={userInfo.email}
-                                        onChange={handleChange}
-                                        className="bg-white text-black border border-white rounded-md px-3 py-1"
-                                    />
-                                )}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="py-4 px-6 border-b border-white"><strong>Password:</strong></td>
-                            <td className="py-4 px-6 border-b border-white">
-                                {!isEditing ? (
-                                    '********'
-                                ) : (
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        value={userInfo.password}
-                                        onChange={handleChange}
-                                        className="bg-white text-black border border-white rounded-md px-3 py-1"
-                                    />
-                                )}
-                            </td>
-                        </tr>
-                    </tbody>
+            <>
+              <h1 className="text-white text-4xl py-10 flex items-start">
+                Welcome,<strong className="text-highlight">{userInfo.username}</strong>
+              </h1>
+              <div className="border-2 border-temp-black bg-black text-white w-full h-[300px] rounded-lg flex flex-col p-4 mb-5">
+                <table className="w-auto border-collapse">
+                  <tbody className="text-lg">
+                    <tr>
+                      <td className="py-6 px-6 text-left border-b border-temp-black text-highlight"><strong>Email:</strong></td>
+                      <td className="py-6 px-6 text-right border-b border-temp-black">
+                        {!isEditing ? (
+                          userInfo.email
+                        ) : (
+                          <input
+                            type="email"
+                            name="email"
+                            value={userInfo.email}
+                            onChange={handleChange}
+                            className="bg-white text-black border border-temp-black rounded-md px-3 py-1 focus:border-[#fbae3c] outline-none"
+                          />
+                        )}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-6 px-6 text-left border-b border-temp-black text-highlight"><strong>Password:</strong></td>
+                      <td className="py-6 px-6 text-right border-b border-temp-black">
+                        {!isEditing ? (
+                          '***********************'
+                        ) : (
+                          <input
+                            type="password"
+                            name="password"
+                            value={userInfo.password}
+                            onChange={handleChange}
+                            className="bg-white text-black border border-temp-black rounded-md px-3 py-1 focus:border-[#fbae3c] outline-none"
+                          />
+                        )}
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
                 <div className="flex justify-end mt-auto">
-                    {loading ? (
-                        <p className="text-white">Loading...</p>
-                    ) : (
-                        <>
-                            {isEditing ? (
-                                <button
-                                    className="max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
-                                    onClick={saveEditHandler}
-                                >
-                                    Save
-                                </button>
-                            ) : (
-                                <button
-                                    className="max-w-fit px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer relative hover:bg-amber-500 active:bg-amber-400"
-                                    onClick={saveEditHandler}
-                                >
-                                    Edit Profile
-                                </button>
-                            )}
-                        </>
-                    )}
+                  {loading ? (
+                    <p className="text-highlight">Loading...</p>
+                  ) : (
+                    <button
+                      className="px-5 py-2 rounded-md bg-highlight text-white font-bold cursor-pointer hover:bg-[#f8a32a] active:bg-[#e89c1b] transition-colors duration-300"
+                      onClick={saveEditHandler}
+                    >
+                      {isEditing ? 'Save' : 'Edit Profile'}
+                    </button>
+                  )}
                 </div>
-            </div>
-        </>
+              </div>
+            </>
     );
 }
