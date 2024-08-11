@@ -52,7 +52,7 @@ const JoinPage = () => {
   }, [jwt, navigate]);
 
   return (
-    <div className="joinTournamentCont flex justify-center mt-12 min-h-full">
+    <div className="joinTournamentCont flex justify-center items-center bg-black mt-12 min-h-screen">
       {loading && (
         <>
           <h3>Attempting to Join Tournament</h3>
