@@ -1,0 +1,43 @@
+/* Add spacing between the table rows and columns */
+table {
+  border-collapse: separate; /* Use 'separate' to allow border radius */
+  border-spacing: 10px 15px; /* Horizontal and vertical spacing */
+  border: 2px solid black; /* Apply border color to the table */
+  border-radius: 10px; /* Add border radius to the table */
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden; 
+}
+
+th, td {
+  padding: 10px; /* Padding inside the cells */
+  text-align: center; /* Center-align text */
+}
+
+th {
+  background-color: #fbae3c; /* Background color for headers */
+  color: white; /* Text color for headers */
+}
+
+.team-header {
+  background-color: #d3d3d3; /* Background color for team header */
+  font-weight: bold; /* Bold text for team header */
+  text-align: left; /* Align team header to the left */
+  font-size: xx-large; /* Font size for team header */
+  padding: 15px; /* Padding for team header */
+}
+
+/* INPUT STYLING */
+input {
+  width: 50px;
+  text-align: center;
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.tourn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

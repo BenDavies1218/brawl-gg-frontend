@@ -4,7 +4,6 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TosPage from './pages/TosPage'
-import './App.css'
 import Template from './pages/_Template';
 import PageNotFound from './pages/PageNotFound';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
@@ -12,6 +11,8 @@ import ResetPasswordPage from './pages/ResetPassword';
 import TournamentPage from "./pages/TournamentPage";
 import TournamentCreationPage from './pages/TournamentCreationPage';
 import { useUserData } from './contexts/UserContext';
+import UserDashboard from './pages/UserDashboard';
+import JoinPage from "./pages/JoinPage"
 
 function App() {
   const { userJwt } = useUserData();
@@ -29,6 +30,8 @@ function App() {
           <Route path='/reset-password' element={<ResetPasswordPage />} />
           <Route path="/tournament/:id" element={<TournamentPage userJwt={userJwt}/>} />
           <Route path="/tournament-creation" element={<TournamentCreationPage userJwt={userJwt}/>} />
+          <Route path="/tournament/join/:jwt" element={<JoinPage />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
